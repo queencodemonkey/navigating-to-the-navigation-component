@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/login_nav_graph"
+        app:startDestination="@id/login">
+
+    <fragment
+            android:id="@+id/login"
+            android:name="rt.nnc.modules.login.LoginFragment"
+            android:label="@string/label_login"
+            tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_login_to_verifyLogin"
+                app:destination="@id/verify"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/verify"
+            android:name="rt.nnc.modules.login.VerifyLoginFragment"
+            android:label="VerifyLoginFragment"
+            tools:layout="@layout/fragment_verify_login"/>
+</navigation>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/launchFragment">
+
+    <fragment
+            android:id="@+id/launchFragment"
+            android:name="rt.nnc.modules.LaunchFragment"
+            android:label="fragment_launch">
+        <action android:id="@+id/action_launchFragment_to_home"
+                app:destination="@id/home"/>
+        <action android:id="@+id/action_launchFragment_to_loginActivity"
+                app:destination="@id/loginActivity"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/home"
+            android:name="rt.nnc.modules.HomeFragment"
+            android:label="@string/label_home"
+            tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_home_to_browse"
+                app:destination="@id/browse"/>
+        <action android:id="@+id/action_home_to_editor_nav_graph"
+                app:destination="@id/editor_nav_graph"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/browse"
+            android:name="rt.nnc.modules.BrowseFragment"
+            android:label="@string/label_browse"
+            tools:layout="@layout/fragment_browse">
+        <action android:id="@+id/action_browse_to_detail"
+                app:destination="@id/detail"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/detail"
+            android:name="rt.nnc.modules.DetailFragment"
+            tools:layout="@layout/fragment_detail">
+        <argument android:name="image"
+                  app:argType="integer"/>
+        <argument android:name="title"
+                  app:argType="string"/>
+    </fragment>
+
+    <include app:graph="@navigation/editor_nav_graph"/>
+
+    <activity android:id="@+id/loginActivity"
+              android:name="rt.nnc.modules.login.LoginActivity"
+              android:label="LoginActivity"/>
+
+    <action
+            android:id="@+id/action_global_logout"
+            app:destination="@id/launchFragment"
+            app:clearTask="true"
+            app:launchSingleTop="true"/>
+
+</navigation>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NNC Modules</string>
+
+    <string name="label_home">Home</string>
+    <string name="label_browse">Browse</string>
+    <string name="label_detail">Detail</string>
+    <string name="label_editor">Editor</string>
+    <string name="label_login">Login</string>
+
+    <string name="title_uploader">Uploader</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

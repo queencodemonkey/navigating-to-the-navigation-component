@@ -25,10 +25,5 @@ class HomeFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btn_edit)
             .setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_editor_nav_graph))
-
-        view.findViewById<Button>(R.id.btn_logout)
-            .setOnClickListener{
-                (requireActivity() as LoginHandler).logout()
-            }
     }
 }

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -54,7 +54,7 @@ class BrowseFragment : Fragment() {
 
                 val action = BrowseFragmentDirections.actionBrowseToDetail(it.imageResId, it.imageTitle)
                 holder.itemView.setOnClickListener {
-                    Navigation.findNavController(holder.itemView).navigate(action)
+                    holder.itemView.findNavController().navigate(action)
                 }
             }
         }

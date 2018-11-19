@@ -21,6 +21,8 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         DetailFragmentArgs.fromBundle(arguments).let {
+            // Setting label dynamically does not currently work. https://issuetracker.google.com/issues/80267266
+            //findNavController().currentDestination?.label = it.title
             (requireActivity() as ToolbarHandler).setToolbarTitle(it.title)
 
             view.findViewById<TextView>(R.id.item_title).text = it.title

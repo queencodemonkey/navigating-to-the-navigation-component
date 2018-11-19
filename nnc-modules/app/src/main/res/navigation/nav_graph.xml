@@ -4,17 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/nav_graph"
-        app:startDestination="@id/launchFragment">
-
-    <fragment
-            android:id="@+id/launchFragment"
-            android:name="rt.nnc.modules.LaunchFragment"
-            android:label="fragment_launch">
-        <action android:id="@+id/action_launchFragment_to_home"
-                app:destination="@id/home"/>
-        <action android:id="@+id/action_launchFragment_to_loginActivity"
-                app:destination="@id/loginActivity"/>
-    </fragment>
+        app:startDestination="@id/home">
 
     <fragment
             android:id="@+id/home"
@@ -33,7 +23,11 @@
             android:label="@string/label_browse"
             tools:layout="@layout/fragment_browse">
         <action android:id="@+id/action_browse_to_detail"
-                app:destination="@id/detail"/>
+                app:destination="@id/detail"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
 
     <fragment
@@ -47,15 +41,5 @@
     </fragment>
 
     <include app:graph="@navigation/editor_nav_graph"/>
-
-    <activity android:id="@+id/loginActivity"
-              android:name="rt.nnc.modules.login.LoginActivity"
-              android:label="LoginActivity"/>
-
-    <action
-            android:id="@+id/action_global_logout"
-            app:destination="@id/launchFragment"
-            app:clearTask="true"
-            app:launchSingleTop="true"/>
 
 </navigation>

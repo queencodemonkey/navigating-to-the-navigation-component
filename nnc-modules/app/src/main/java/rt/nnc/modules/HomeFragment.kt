@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment].
@@ -29,7 +28,7 @@ class HomeFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btn_logout)
             .setOnClickListener{
-                requireContext().logout(findNavController())
+                (requireActivity() as LoginHandler).logout()
             }
     }
 }

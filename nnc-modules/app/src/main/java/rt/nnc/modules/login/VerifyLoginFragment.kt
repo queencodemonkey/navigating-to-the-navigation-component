@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import rt.nnc.modules.LoginHandler
 import rt.nnc.modules.R
-import rt.nnc.modules.login
 
 /**
  * A simple [Fragment].
@@ -23,8 +23,7 @@ class VerifyLoginFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btn_verify)
             .setOnClickListener {
-                requireContext().login()
-                requireActivity().finish()
+                (requireActivity() as LoginHandler).login()
             }
     }
 }

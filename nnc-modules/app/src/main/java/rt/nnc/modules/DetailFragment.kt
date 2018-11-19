@@ -23,8 +23,8 @@ class DetailFragment : Fragment() {
         DetailFragmentArgs.fromBundle(arguments).let {
             (requireActivity() as ToolbarHandler).setToolbarTitle(it.title)
 
-            view.findViewById<TextView>(R.id.title).text = it.title
-            view.findViewById<ImageView>(R.id.image).setImageResource(it.image)
+            view.findViewById<TextView>(R.id.item_title).text = it.title
+            view.findViewById<ImageView>(R.id.item_image).setImageResource(it.image)
         }
     }
 }
